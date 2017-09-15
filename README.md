@@ -1,3 +1,5 @@
+[![Travis Build Status](https://travis-ci.org/schwarja209/rfars.svg?branch=master)](https://travis-ci.org/schwarja209/rfars) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/schwarja209/rfars?branch=master&svg=true)](https://ci.appveyor.com/project/schwarja209/rfars)
+
 rfars
 =====
 
