@@ -1,0 +1,19 @@
+Package: rfars
+Type: Package
+Title: Functions to Analize FARS Data
+Version: 0.1.0
+Date: 2017-09-14
+Author: Jacob Schwartz
+Maintainer: Jacob Schwartz <schwarja209@gmail.com>
+Description: This is a package developed for the course "Building R Packages" on Coursera, as part
+    of the Mastering Software Development in R specialization offered by Johns Hopkins University.
+    It consists of a set of functions used to analyze and visualize the data from the US National
+    Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+Imports: readr, dplyr, tidyr, graphics, maps, magrittr
+Suggests: knitr, rmarkdown, testthat
+URL: https://github.com/schwarja209/rfars
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr

@@ -1,0 +1,64 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# rfars
+
+This is a package developed for the course "Building R Packages" on Coursera, as part of the Mastering Software Development in R specialization offered by Johns Hopkins University. It consists of a set of functions used to analyze and visualize the data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+
+This R package is available on Github and can be installed by calling the following function in R:
+
+devtools::install_github("https://github.com/schwarja209/rfars")
+
+
+##Purpose
+
+The aim of this project was to combine the skills of creating, writing, and testing an R package, using the R files provided in the course Building R Packages offered by the Johns Hopkins University through the Coursera's platform.
+
+For this assessment, it was required that we perform the following tasks:
+
+- Write a vignette to be included in the package using knitr and R Markdown;
+- Formulate at least one test using the testthat package;
+- Put the package on Github;
+- Set up the package's repository so that can be checked and built on Travis;
+- Add the Travis badge to the package's README.md file, as soon as your package has built on Travis and the build is passing without errors, warnings, or notes.
+
+
+## Example
+
+The functions in rfars can be used as follows (using raw test data in the "data-raw" folder):
+
+```{r example, eval=FALSE, comment=""}
+fars_read(filename="accident_2013.csv.bz2")
+
+make_filename(year=2013)
+
+fars_read_years(years=c(2013,2014,2015))
+
+fars_summarize_years(years=c(2013,2014,2015))
+
+fars_map_state(state.num=1,year=2013)
+```
+
+Help files describing what each function does with the given inputs can be found in the "man" folder.
+
+
+## R Session
+
+The session in which I have created this package was the following:
+
+```{r appendix, echo=FALSE, comment=""}
+sessionInfo()
+```

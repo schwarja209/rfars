@@ -1,0 +1,50 @@
+---
+title: "Using rfars"
+author: "Jacob Schwartz"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using rfars}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+##Description
+
+The rfars package bundles a set of functions to analyze the data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+
+##Usage Demos
+
+###Getting the data into a more manageable format
+
+The function `fars_read()` allows you to extract the data (samples in the "data-raw" folder) from a compressed format, and store it in a special R object.
+
+```{r func1, eval=FALSE, comment=""}
+# Extracts the data from a compressed file.
+library(rfars)
+data_2013 <- fars_read("accident_2013.csv.bz2")
+head(data_2013)
+```
+
+The `fars_read_years()` function does the same, but without having to name the entire file.  Just provide the year(s) of the data of interest!
+
+*Note: the function `make_filename()` also exists, but is mostly just an intermediate function.*
+
+###Summarizing the car fatalities
+
+In order to get the total number of fatalities by month, you can use the `fars_summarize_years()` function, without even having to read in the raw data first (it does it for you)!
+
+```{r func2, eval=FALSE, comment=""}
+# Creates a table by month & year with the total number of fatalities in 2013 y 2014.
+fars_summarize_years(c(2013, 2014))
+```
+
+
+###Visualizing the car fatalities by state
+
+The function `fars_map_state()` creates a map with the car fatalities in a US state (or states, by number code) from a specific year (again, pre-reading in the data is not necessary, as the function does it for you!).
+
+```{r func3, eval=FALSE, comment=""}
+# Plots the car fatalities for the state of Florida (12) in 2015. 
+fars_map_state(12, 2015)
+```
